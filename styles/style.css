@@ -1689,7 +1689,6 @@ input::-webkit-inner-spin-button {
 	}
 
 	.content {
-		position: absolute;
-		overflow: hidden;
+		
 	}
 }
