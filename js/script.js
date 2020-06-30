@@ -82,9 +82,9 @@ $(document).ready(function(){
 	});
 
 	// Выделение активной строки в меню мобильной версии
-	$('.menuListMobile__link').click(function(){
+	$('.menuListMobile__line').click(function(){
 		$('.menuListMobile__link').removeClass('menuListMobile__link--blue');
-		$(this).addClass('menuListMobile__link--blue');
+		$(this).children('.menuListMobile__link').addClass('menuListMobile__link--blue');
 	});
 
 	$('.link1').click(function(){
