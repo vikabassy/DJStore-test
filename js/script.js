@@ -70,15 +70,15 @@ $(document).ready(function(){
 	// Вызов меню по нажатию кнопки в мобильной версии
 	$('.menuMobile').click(function(){
 		$('.openMenuMobile').show();
-		$('.content').css('height', parseInt($('.openMenuMobile').css('height')));
+		//$('.content').css('height', parseInt($('.openMenuMobile').css('height')));
 	});
 
 	// Скрытие меню по нажатию крестика в мобильной версии
 	$('#closeMobileMenu').click(function(){
 		$('.openMenuMobile').hide();
-		$('.content').css('height', parseInt($('.headerMobile').css('height'))  
+		/*$('.content').css('height', parseInt($('.headerMobile').css('height'))  
 		+ parseInt($('.mainContentMobile').css('height')) 
-		+ parseInt($('#prod2ImgMobile').css('height')));
+		+ parseInt($('#prod2ImgMobile').css('height')));*/
 	});
 
 	// Выделение активной строки в меню мобильной версии
