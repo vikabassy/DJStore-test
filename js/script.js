@@ -279,3 +279,4 @@ $(window).resize(function(){
 	$('.productImg').css('height', $('.prodImg').css('height'));
 });
 
+
