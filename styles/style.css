@@ -1,0 +1,1692 @@
+body, html, ul, li, p, a {
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	color: #397DFF;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	max-width: 1920px;
+	margin: 0 auto;
+	background: #EBEEF5;
+}
+
+/* Header */
+
+.header {
+	position: fixed;
+	top:0;
+	transition: all .3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 92px;
+	width: 100%;
+	max-width: 1920px;
+	background-color: #EBEEF5;
+	z-index: 150;
+}
+
+.header.out {
+	transform: translateY(-100%);
+	transition: .3s;
+}
+
+#logo {
+	background: url('../images/header/logo.png') no-repeat;
+	background-size: contain;
+	display: flex;
+	justify-content: center;
+	width: 154px;
+	height: 50px;
+	margin: 0 9px 0 10px;
+	cursor: pointer;
+}
+
+.menuBox {
+	display: flex;
+	justify-content: center;
+}
+
+.menu__navLink {
+	text-decoration: none;
+	font-size: 14px;
+	color: #000000;
+	margin: 0 16px;
+}
+
+.menu__navLink:hover {
+	border-bottom: 3px solid #397dff;
+	padding-bottom: 34px;
+}
+
+.active{
+	color: #397dff;
+	font-weight: 600;
+	border-bottom: 3px solid #397dff ;
+	padding-bottom: 34px;
+	position: relative;
+}
+
+.eMail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 147px;
+	height: 24px;
+	margin: 0 26px 0 9px;
+}
+
+#eMailLogo {
+	width: 24px;
+	height: 24px;
+}
+
+.call {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 24px;
+	width: 136px;
+}
+
+#callname {
+	color: #397DFF;
+	cursor: pointer;
+	font-size: 11px;
+	line-height: 13px;
+}
+
+.callBox {
+	display: flex;
+	flex-direction: column;
+}
+
+.call {
+	margin-right: 10px;
+}
+
+.call a {
+	font-size: 11px;
+}
+
+#callLogo {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+
+#callNumber {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+/* Pop-up */
+
+.overlay_popUp {
+	width: 100%;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	z-index: 60;
+	top: 0;
+	left: 0;
+	background: #000000;
+	opacity: 0.5;
+}
+
+.popUpHideShow {
+	display: none;
+}
+
+.popUpBox {
+	position: fixed;
+	z-index: 100;
+	top: 30%;
+	left: 35%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 538px;
+	height: 408px;
+	background: #ffffff;
+	border-radius: 16px;
+}
+
+.popUpForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.check-agree {
+	display: flex;
+}
+
+#popUpName {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	margin-bottom: 12px;
+}
+
+#popUpMore {
+	font-size: 16px;
+	line-height: 160%;
+	margin-bottom: 28px;
+}
+
+#emptyInput {
+	color: red;
+	margin-bottom: 10px;
+	display: none;
+	font-size: 12px;
+}
+
+.userData {
+	width: 454px;
+	height: 48px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+	border-radius: 9px;
+}
+
+.userData {
+	margin-bottom: 24px;
+	font-size: 16px;
+	padding-left: 15px;
+}
+
+.userData::placeholder {
+	color: color: rgba(43, 45, 58, 0.5);;
+	font-size: 16px;
+}
+
+#userName {
+	text-transform: capitalize;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.checkAgree {
+	display: flex;
+	justify-content: space-between;
+}
+
+#agreeCheckbox {
+	margin-bottom: 16px;
+}
+
+#sendButton {
+	width: 454px;
+	height: 52px;
+	background: #397DFF;
+	border-radius: 8px;
+	color: #ffffff;
+	border: none;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.successHideShow {
+	display: none;
+}
+
+.successPopUp {
+	position: fixed;
+	z-index: 100;
+	top: 30%;
+	left: 35%;
+	display: flex;
+	justify-content: center;
+	background: #ffffff;
+	border-radius: 16px;
+	width: 538px;
+	height: 408px;
+}
+
+.circlesPopUp {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#successImg {
+	width: 160px;
+	height: 160px;
+	margin-bottom: 24px;
+}
+
+.successText {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 162%;
+}
+
+#okButton {
+	width: 454px;
+	height: 52px;
+	background: #397DFF;
+	border-radius: 8px;
+	color: #ffffff;
+	margin-top: 32px;
+	border: none;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+/* Body */
+
+/* Slider */
+.slider {
+	width: 100%;
+	height: 624px;
+	background: url(../images/slider/slider.jpg);
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin-top: 92px;
+}
+
+.aboutBox {
+	color: #ffffff;
+	font-size: 16px;
+	width: 590px;
+	height: 293px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 123px 430px 208px 20%;
+}
+
+.aboutBox p {
+	margin: 0;
+}
+
+#aboutBoxText1 {
+	font-size: 18px;
+	margin-bottom: 12px;
+}
+
+#aboutBoxText2 {
+	font-size: 52px;
+	font-weight: 600;
+	margin-bottom: 24px;
+}
+
+#aboutBoxText3 {
+	margin-bottom: 54px;
+	line-height: 148%;
+}
+
+.aboutButtons {
+	display: flex;
+}
+
+#callButton {
+	border-radius: 8px;
+	width: 186px;
+	height: 48px;
+	color: #ffffff;
+	background: transparent;
+	border-color: #ffffff;
+	margin-right: 24px;
+}
+
+#briefButton {
+	background: #397DFF;
+	border-radius: 8px;
+	border: none;
+	width: 186px;
+	height: 48px;
+	color: #ffffff;
+}
+
+#briefButton:active, #briefButton:focus, #callButton:active, #callButton:focus{
+  outline: none !important;
+}
+#briefButton::-moz-focus-inner, #callButton::-moz-focus-inner{
+  border: 0 !important;
+}
+
+
+.sliderBox {
+	position: absolute;
+	width: 676px;
+	left: 69%;
+	overflow: hidden;
+	margin: 180px 0 0 60px;
+}
+
+.sliderButton {
+	margin-left: 30px;
+}
+
+#leftButton {
+	background: url('../images/slider/left.png');
+	border: none;
+	width: 32px;
+	height: 32px;
+	margin-right: 44px;
+	margin-top: 34px;
+}
+
+#rightButton {
+	background: url('../images/slider/right.png');
+	border: none;
+	width: 32px;
+	height: 32px;
+	margin-top: 34px;
+}
+
+#rightButton:active, #rightButton:focus, #leftButton:active, #leftButton:focus {
+  outline: none !important;
+}
+#rightButton::-moz-focus-inner {
+  border: 0 !important;
+}
+
+.slidewrapper {
+	display: flex;
+	width: 100%;
+	height: 210px;
+	margin-bottom: 20px;
+}
+
+.sliderItem {
+	min-width: 338px;
+	font-size: 14px;
+	line-height: 160%;
+	color: #ffffff;
+	padding-left: 32px;
+	border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.numberSlider {
+	margin-bottom: 24px;
+	font-weight: bold;
+	font-size: 64px;
+	line-height: 78px;
+	color: #397DFF;
+	letter-spacing: 0.02em;
+	opacity: 0.5;
+}
+
+.textSlider {
+	opacity: 0.5;
+}
+
+.sliderItem__opacity {
+	opacity: 1;
+}
+
+/* Product */
+
+
+.productBox {
+	background: #EBEEF5;
+	width: 100%;
+	max-width: 1920px;
+	float: bottom;
+}
+
+
+.productPhotos {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	max-width: 1920px;
+}
+
+.prodImg {
+	width: 100%;
+}
+
+#productImg1 {
+	width: 50%;
+}
+
+#productImg2 {
+	width: 50%;
+	position: absolute;
+	left: 50%;
+}
+
+.speakerBox {
+	position: absolute;
+	top: 10px;
+	left: 20.5%;
+}
+
+#speaker1 {
+	position: absolute;
+	left: 20%;
+	top: 40px;
+}
+
+#speaker2 {
+	position: absolute;
+	left: 70%;
+	top: 48px;
+}
+
+#circleProd1 {
+	position: absolute;
+	left: 20%;
+	top: 60px;
+}
+
+#circleProd2 {
+	position: absolute;
+	left: 70%;
+	top: 60px;
+}
+
+/* Всплывающее окно с описанием продукта */
+.aboutProductOverlay {
+	width: 100%;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	z-index: 60;
+	top: 0;
+	left: 0;
+	background: #000000;
+	opacity: 0;
+}
+
+.aboutProduct {
+	position: absolute;
+	display: none;
+	top: -116px;
+	left: -152px;
+	background: #ffffff;
+	width: 352px;
+	height: 180px;
+	z-index: 80;
+	border-radius: 10px;
+}
+
+.aboutProductText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 328px;
+	height: 180px;
+	margin: 0 0 0 24px;
+}
+
+#aboutText1 {
+ margin: 6px 0;
+}
+
+#aboutText2 {
+ margin-bottom: 12px;
+}
+
+.aboutProduct li {
+	list-style: none;
+	background: url(../images/product/ellipse.png) no-repeat;
+	padding-left: 24px;
+	font-size: 12px;
+	margin-bottom: 10px; 
+}
+
+.aboutText {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 132%;
+}
+
+#polygonProd {
+	position: absolute;
+	top: 178px;
+	left: 170px;
+	width: 28px;
+	height: 20px;
+	z-index: 2;
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-top: 20px solid white;
+	border-radius: 2px;
+}
+
+#iconProd {
+	position: absolute;
+	top: 12px;
+	left: 255px;
+}
+
+#closeIcon {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 12px;
+	left: 325px;
+	cursor: pointer;
+}
+
+@media (max-width: 1679px) {
+	.aboutBox {
+		margin: 123px 15% 208px 10%;	
+	}
+
+	.sliderBox {
+		left: 60%;
+		margin: 180px 0 0 60px;
+	}	
+}
+
+@media (max-width: 1439px) {
+	.slider {
+		height: 562px;
+	}
+
+	.aboutProduct {
+		top: -126px;
+	}
+
+	.aboutBox {
+		margin: 123px 430px 208px 10%;
+	}
+
+	#aboutBoxText1 {
+		font-size: 14px;
+	}
+
+	#aboutBoxText2 {
+		font-size: 46px;
+	}
+
+	#aboutBoxText3 {
+		font-size: 12px;
+	}
+
+	#callButton {
+		width: 150px;
+		height: 40px;
+	}
+
+	#briefButton {
+		width: 150px;
+		height: 40px;
+	}
+
+	.sliderBox {
+		left: 56%;
+		width: 600px;
+	}
+	
+	.textSlider {
+		font-size: 12px
+	}
+
+	.sliderItem {
+		min-width: 300px;
+		font-size: 14px;
+		line-height: 160%;
+		color: #ffffff;
+		padding-left: 32px;
+		border-right: 2px solid rgba(255, 255, 255, 0.2);
+	}
+
+	#speaker1 {
+		width: 63px;
+		height: 85px;
+		top: 26px;
+	}
+
+	#speaker2 {
+		width: 63px;
+		height: 85px;
+		top: 34px;
+	}
+
+	#circleProd1 {
+		width: 55px;
+		left: 21%;
+		top: 54px;
+	}
+
+	#circleProd2 {
+		width: 55px;
+		left: 70.5%;
+		top: 54px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.popUpBox {
+		top: 35%;
+		left: 30%;
+		width: 448px;
+		height: 340px;
+	}
+
+	#popUpName {
+		font-size: 20px;
+		margin: 0 0 8px 12px;
+	}
+
+	#popUpMore {
+		font-size: 14px;
+		margin: 0 0 32px 12px;
+	}
+
+	#emptyInput {
+		margin: 0 0 10px 12px;
+		font-size: 10px;
+	}
+
+	.userData {
+		width: 388px;
+		height: 42px;
+		margin-left: 12px;
+		font-size: 14px;
+	}
+
+	#userName {
+		margin-bottom: 14px;
+	}
+
+	.userData::placeholder {
+		font-size: 14px;
+	}
+
+	#agreeCheckbox {
+		margin: 3px 16px 0 12px;
+	}
+
+	#checkBoxLabel {
+		font-size: 12px;
+		margin-left: -10px;
+	}
+
+	.check-agree a {
+		font-size: 12px;
+	}
+
+	#sendButton {
+		width: 388px;
+		height: 42px;
+		margin: 22px 0 0 12px;
+		font-size: 16px;
+	}
+
+	.successPopUp {
+		top: 35%;
+		left: 30%;
+		width: 448px;
+		height: 340px;
+	}
+
+	#successImg {
+		width: 128px;
+		height: 128px;
+	}
+
+	.successText {
+		font-size: 16px;
+	}
+
+	#okButton {
+		width: 388px;
+		height: 42px;
+		margin: 32px 0 0 12px;
+		font-size: 16px;
+	}
+
+	.eMail {
+		margin: 0 16px 0 9px;
+		width: 134px;
+	}
+
+	.eMail p {
+		font-size: 12px;
+	}
+
+	#logo {
+		width: 128px;
+		height: 42px;
+	}
+
+	.menu__navLink {
+		font-size: 12px;
+		margin: 0 12px;
+	}
+
+	.menu__navLink:hover {
+		padding-bottom: 35px;
+	}
+
+	.active {
+		padding-bottom: 35px;
+	}
+}
+
+@media (max-width: 1151px) {
+	.popUpBox {
+		top: 25%;
+		left: 28%;
+		width: 374px;
+		height: 284px;
+	}
+
+	#popUpName {
+		font-size: 16px;
+		margin: 0 0 6px 12px;
+	}
+
+	#popUpMore {
+		font-size: 12px;
+		margin: 0 0 28px 12px;
+	}
+
+	#emptyInput {
+		margin: 0 0 10px 12px;
+		font-size: 10px;
+	}
+
+	.userData {
+		width: 320px;
+		height: 36px;
+		margin-left: 12px;
+		font-size: 12px;
+	}
+
+	#userName {
+		margin-bottom: 14px;
+	}
+
+	#userNumber {
+		margin-bottom: 14px;
+	}
+
+	.userData::placeholder {
+		font-size: 12px;
+	}
+
+	#agreeCheckbox {
+		margin: 3px 16px 0 12px;
+	}
+
+	#checkBoxLabel {
+		font-size: 10px;
+		margin-left: -10px;
+	}
+
+	.check-agree a {
+		font-size: 10px;
+	}
+
+	#sendButton {
+		width: 320px;
+		height: 36px;
+		margin: 14px 0 0 12px;
+		font-size: 16px;
+	}
+
+	.successPopUp {
+		top: 25%;
+		left: 28%;
+		width: 374px;
+		height: 284px;
+	}
+
+	#successImg {
+		width: 108px;
+		height: 108px;
+	}
+
+	.successText {
+		font-size: 14px;
+	}
+
+	#okButton {
+		width: 320px;
+		height: 36px;
+		margin: 32px 0 0 12px;
+		font-size: 16px;
+	}
+
+	.slider {
+		height: 520px;
+	}
+
+	.sliderBox {
+		left: 50%;
+		margin: 140px 0 0 60px;
+	}
+
+	#speaker1 {
+		width: 47px;
+		height: 64px;
+		top: 18px;
+	}
+
+	#speaker2 {
+		width: 47px;
+		height: 64px;
+		top: 26px;
+	}
+
+	#circleProd1 {
+		width: 44px;
+		left: 20.4%;
+		top: 40px;
+	}
+
+	#circleProd2 {
+		width: 44px;
+		left: 70.2%;
+		top: 40px;
+	}
+
+	.aboutProduct {
+		top: -112px;
+		left: -134px;
+		width: 294px;
+		height: 150px;
+	}
+
+	.aboutProductText {
+		margin: -10px 0 0 14px;
+	}
+
+	#aboutText1 {
+		margin: 0 0 4px 0;
+		font-size: 16px;
+	}
+
+	#aboutText2 {
+		margin-bottom: 8px;
+		font-size: 16px;
+	}
+
+	.aboutProduct li {
+		background: url(../images/product/ellipse1.png) no-repeat;
+		padding-left: 20px;
+		font-size: 10px;
+		margin-bottom: 6px; 
+	}
+
+	#polygonProd {
+		top: 144px;
+		left: 142px;
+	}
+
+	#iconProd {
+		top: 12px;
+		left: 206px;
+		width: 58px;
+	}
+
+	#closeIcon {
+		width: 12px;
+		height: 12px;
+		top: 12px;
+		left: 268px;
+	}
+}
+
+@media (max-width: 1023px) {
+	#logo {
+		width: 106px;
+		height: 33px;
+		margin: 0 9px 0 10px;
+	}
+
+	.menu__navLink {
+		font-size: 10px;
+		margin: 0 6px;
+	}
+
+	.menu__navLink:hover {
+		padding-bottom: 35px;
+	}
+
+	.active{
+		padding-bottom: 35px;
+	}
+
+	.eMail {
+		width: 110px;
+		margin: 0 10px 0 4px;
+	}
+
+	.eMail p {
+		font-size: 10px;
+	}
+
+	#eMailLogo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.call {
+		width: 112px;
+	}
+
+	#callName {
+		font-size: 9px;
+	}
+
+	#callNumber {
+		font-size: 11px;
+	}
+
+	.call {
+		margin-right: 10px;
+	}
+
+	.call a {
+		font-size: 11px;
+	}
+
+	#callLogo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.slider {
+		height: 508px;
+	}
+
+	.aboutBox {
+		min-width: 350px;
+		margin: 123px 430px 208px 6%;
+	}
+
+	#aboutBoxText1 {
+		font-size: 12px;
+		margin-bottom: 12px;
+	}
+
+	#aboutBoxText2 {
+		font-size: 38px;
+		line-height: 1;
+		margin-bottom: 18px;
+	}
+
+	#aboutBoxText3 {
+		margin-bottom: 24px;
+		font-size: 10px;
+	}
+
+	#callButton {
+		border-radius: 8px;
+		width: 130px;
+		height: 34px;
+		margin-right: 24px;
+		font-size: 12px;
+	}
+
+	#briefButton {
+		border-radius: 8px;
+		width: 130px;
+		height: 34px;
+		font-size: 12px;
+	}
+
+	.sliderBox {
+		width: 490px;
+		left: 45%;
+		margin: 180px 0 0 60px;
+	}
+
+	#leftButton {
+		margin-top: 0;
+	}
+
+	#rightButton {
+		margin-top: 0;
+	}
+
+	.sliderItem {
+		min-width: 245px;
+		height: 190px;
+		line-height: 160%;
+	}
+	
+	.textSlider {
+		font-size: 10px;
+		line-height: 1.5;
+	}
+
+	.numberSlider {
+		margin-bottom: 8px;
+		font-size: 54px;
+	}
+
+	#speaker1 {
+		width: 40px;
+		height: 54px;
+		left: 20%;
+		top: 12px;
+	}
+
+	#speaker2 {
+		width: 40px;
+		height: 54px;
+		left: 70%;
+		top: 20px;
+	}
+
+	#circleProd1 {
+		position: absolute;
+		left: 19.5%;
+		top: 28px;
+	}
+
+	#circleProd2 {
+		position: absolute;
+		left: 69.5%;
+		top: 28px;
+	}
+
+	.aboutProduct {
+		top: -124px;
+		left: -138px;
+		width: 294px;
+		height: 150px;
+	}
+
+	.productImg {
+		max-height: 250px;
+	}
+}
+
+@media (min-width: 800px) {
+	.headerMobile, .productMobile, .mainContentMobile, .callPopUpMobile, .successHideShowMobile, .openMenuMobile {
+		display: none !important;
+	}
+}
+
+@media (max-width: 799px) {
+	.header {
+		display: none !important;
+	}
+
+	.headerMobile {
+		width: 100%;
+		height: 114px;
+		background: #EBEEF5;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.logoMobile {
+		background: url(../images/header/logoMobile.svg);
+		width: 138px;
+		height: 46px;
+		margin: 52px 0 16px 16px;
+	}
+
+	.menuMobile {
+		background: url(../images/header/menuMobile.svg);
+		width: 24px;
+		height: 24px;
+		margin: 63px 15px 0 27px;
+		border: none;
+	}
+
+	.menuMobile:active, .menuMobile:focus {
+		outline: none !important;
+	}
+	.menuMobile::-moz-focus-inner {
+		border: 0 !important;
+	}
+
+	.slider {
+		display: none !important;
+	}
+
+	.mainContentMobile {
+		display: flex;
+		flex-direction: column;
+		background: url('../images/product/sliderMobile.jpg') no-repeat;
+		background-size: 100%;
+		width: 100%;
+		min-width: 375px;
+		color: #F0F0F0;
+	}
+
+	#mainText1{
+		font-size: 14px;
+		line-height: 17px;
+		margin: 36px 0 12px 16px;
+	}
+
+	#mainText2 {
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 37px;
+		margin: 0 0 24px 16px;
+	}
+
+	#mainText3 {
+		color: rgba(240, 240, 240, 0.8);
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 148%;
+		margin-left: 16px;
+	}
+
+	.mainButtons {
+		display: flex;
+		margin: 32px 0 60px 16px;
+	}
+
+	#callMobile {
+		border-radius: 7px;
+		width: 156px;
+		height: 42px;
+		color: #ffffff;
+		background: transparent;
+		border-color: #ffffff;
+		margin-right: 16px;
+	}
+
+	#briefMobile {
+		background: #397DFF;
+		border-radius: 7px;
+		border: none;
+		width: 156px;
+		height: 42px;
+		color: #ffffff;
+	}
+
+	#callMobile:active, #callMobile:focus, #briefMobile:active, #briefMobile:focus{
+		outline: none !important;
+	}
+	#callMobile::-moz-focus-inner, #briefMobile::-moz-focus-inner {
+		border: 0 !important;
+	}
+
+	.product {
+		display: none !important;
+	}
+
+	.productMobile {
+		width: 100%;
+		position: relative;
+	}
+
+	.productPhotosMobile {
+		width: 100%;
+		max-width: 799px;
+		display: flex;
+		position: absolute;
+	}
+
+	.productImgMobile1 {
+		min-width: 187px;
+		width: 50%;
+	}
+
+	.productImgMobile2 {
+		min-width: 188px;
+		width: 50%;
+		position: absolute;
+		right: 0;
+	}
+
+	.prodImgMobile {
+		width: 100%;
+		height: 100%;
+	}
+
+	.prodImgMobile {
+		width: 100%;
+
+	}
+
+	#productImg1Mobile {
+		width: 50%;
+	}
+
+	#productImg2Mobile {
+		width: 50%;
+		position: absolute;
+		left: 50%;
+	}
+
+	.speakerBoxMobile {
+		position: absolute;
+		top: 10px;
+		left: 20.5%;
+	}
+
+	#speaker1Mobile {
+		position: absolute;
+		left: -18px;
+		top: 28px;
+	}
+
+	#speaker2Mobile {
+		position: absolute;
+		left: 78%;
+		top: 38px;
+	}
+
+	#circleProd1Mobile {
+		position: absolute;
+		left: -28px;
+		top: 22px;
+	}
+
+	#circleProd2Mobile {
+		position: absolute;
+		left: 74%;
+		top: 32px;
+	}
+/* --------------------*/
+.aboutProductOverlayMobile {
+	width: 100%;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	z-index: 201;
+	top: 0;
+	left: 0;
+	background: #000000;
+	opacity: 0;
+}
+
+.aboutProductMobile {
+	position: absolute;
+	top: -158px;
+	left: -192px;
+	overflow: hidden;
+	background: #ffffff;
+	width: 323px;
+	height: 184px;
+	z-index: 202;
+	border-radius: 10px;
+	display: none;
+}
+
+.aboutProductTextMobile {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 323px;
+	height: 184px;
+	margin: 0 0 0 24px;
+}
+
+#aboutText1Mobile {
+ margin: 6px 0;
+}
+
+#aboutText2Mobile {
+ margin-bottom: 12px;
+}
+
+.aboutProductMobile li {
+	list-style: none;
+	background: url(../images/product/ellipse.png) no-repeat;
+	padding-left: 24px;
+	font-size: 12px;
+	margin-bottom: 10px; 
+}
+
+.aboutTextMobile {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 132%;
+}
+
+#polygonProdMobile {
+	position: absolute;
+	top: 20px;
+	left: -22px;
+	width: 28px;
+	height: 20px;
+	z-index: 2;
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-top: 20px solid white;
+	border-radius: 2px;
+	display: none;
+}
+
+#iconProdMobile {
+	position: absolute;
+	top: 6px;
+	left: 235px;
+}
+
+#closeIconMobile {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 12px;
+	left: 300px;
+	cursor: pointer;
+}
+/*---------------------*/
+
+	.callPopUpMobile_overlay {
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		z-index: 49;
+		top: 0;
+		left: 0;
+		background: #000000;
+		opacity: 0.5;
+		display: none;
+	}
+
+	.popUpBoxMobile {
+		position: fixed;
+		z-index: 100;
+		left: 4%;
+		top: 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 343px;
+		height: 346px;
+		background: #ffffff;
+		border-radius: 12px;
+		display: none;
+	}
+
+	.popUpFormMobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 34px 0 0 16px;
+	}
+
+	.check-agreeMobile {
+		display: flex;
+	}
+
+	#popUpNameMobile {
+		font-weight: 600;
+		font-size: 21px;
+		line-height: 26px;
+		margin:-10px 0 0;
+	}
+
+	#popUpMoreMobile {
+		font-size: 12px;
+		line-height: 160%;
+		margin: 8px 0 24px;
+	}
+
+	#emptyInputMobile {
+		color: red;
+		margin: 8px 0 8px;
+		display: none;
+		font-size: 10px;
+	}
+
+	.userDataMobile {
+		width: 311px;
+		height: 42px;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		box-sizing: border-box;
+		border-radius: 9px;
+		margin-bottom: 16px;
+		font-size: 14px;
+		padding-left: 15px;
+	}
+
+	.userDataMobile::placeholder {
+		color: rgba(43, 45, 58, 0.5);
+		font-size: 14px;
+	}
+
+	#userNameMobile {
+		text-transform: capitalize;
+	}
+
+	input[type='number'] {
+	    -moz-appearance:textfield;
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	    -webkit-appearance: none;
+	}
+
+	.checkAgreeMobile {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#agreeCheckboxMobile {
+		margin-bottom: 16px;
+	}
+	.check-agreeMobile a, .check-agreeMobile label{
+		font-size: 9px;
+	}
+
+	#labelCallMobile {
+		margin: 4px 0 0 8px;
+	}
+
+	#sendButtonMobile {
+		width: 311px;
+		height: 46px;
+		background: #397DFF;
+		border-radius: 8px;
+		color: #ffffff;
+		border: none;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.successHideShowMobile {
+		display: none;
+	}
+
+	.successPopUpMobile {
+		position: fixed;
+		z-index: 100;
+		top: 20%;
+		left: 4%;
+		display: flex;
+		justify-content: center;
+		background: #ffffff;
+		border-radius: 12px;
+		width: 343px;
+		height: 346px;
+	}
+
+	.circlesPopUpMobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#successImgMobile {
+		width: 130px;
+		height: 130px;
+		margin-bottom: 24px;
+	}
+
+	.successTextMobile {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 162%;
+	}
+
+	#okButtonMobile {
+		width: 311px;
+		height: 46px;
+		background: #397DFF;
+		border-radius: 8px;
+		color: #ffffff;
+		margin-top: 24px;
+		border: none;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	.openMenuMobile {
+		position: fixed;
+		top: 0;
+		z-index: 100;
+		background: #EBEEF5;
+		width: 100%;
+		display: none;
+	}
+
+	.menuHeadMobile {
+		width: 100%;
+		height: 114px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#closeMobileMenu {
+		margin: 61px 13px 25px;
+	}
+
+	.menuListMobile__line {
+		display: flex;
+		align-items: center;
+		height: 72px;
+		border-bottom: 1px solid rgba(43, 45, 58, 0.1);
+		margin: 0 16px;
+	}
+
+	.menuListMobile__image {
+		margin-left: 16px;
+	}
+
+	.menuListMobile__image--black1 {
+		background: url('../images/header/menu1Black.svg');
+		width: 24px;
+		height: 24px;
+	}
+
+	.menuListMobile__image--black2 {
+		background: url('../images/header/menu2Black.svg');
+		width: 24px;
+		height: 24px;
+	}
+
+	.menuListMobile__image--black3 {
+		background: url('../images/header/menu3Black.svg');
+		width: 24px;
+		height: 24px;
+	}
+
+	.menuListMobile__image--black4 {
+		background: url('../images/header/menu4Black.svg');
+		width: 24px;
+		height: 24px;
+	}
+
+	.menuListMobile__image--black5 {
+		background: url('../images/header/menu5Black.svg');
+		width: 24px;
+		height: 24px;
+	}
+
+	.menuListMobile__image--black6 {
+		background: url('../images/header/menu6Black.svg');
+		width: 24px;
+		height: 24px;
+	}
+
+
+	.menuListMobile__line--font {
+		margin: 4px 0 0 24px;
+		color: #2B2D3A;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	.menuListMobile__link--blue {
+		color: #397DFF;
+		font-weight: 600;
+	}
+
+	.buttonBoxMobile {
+		display: flex;
+		justify-content: center;
+	}
+
+	#menuMobileButton {
+		margin: 32px 0;
+		width: 343px;
+		height: 42px;
+		border-radius: 6px;
+		background: #397DFF;
+		font-weight: 500;
+		font-size: 16px;
+		border: none;
+		color: #ffffff;
+	}
+
+	#writeUsMobile {
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 27px;
+		margin: 0 0 17px 16px;
+	}
+
+	.menuMobilePost {
+		margin-bottom: 89px;
+		display: flex;
+	}
+
+	#mailIconMobile {
+		margin: 0 18px 0 16px;
+		cursor: pointer;
+	}
+
+	#postMenuMobile {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	#menuMobileButton:active, #menuMobileButton:focus{
+		outline: none !important;
+	}
+
+	#menuMobileButton::-moz-focus-inner{
+		border: 0 !important;
+	}
+
+	.content {
+		position: absolute;
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link type="text/css" rel="stylesheet" href="styles/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<div class="content">
+<!-- Header -->
+<!-- Mobile-->
+	<div class="headerMobile">
+		<div class="logoMobile">
+		</div>
+		<input type="button" name="" class="menuMobile">
+	</div>
+
+	<div class="openMenuMobile">
+		<div class="menuHeadMobile">
+			<img src="images/header/logoMobile.svg" class="logoMobile">
+			<img src="images/header/XMobile.svg" id="closeMobileMenu">
+		</div>
+		<nav class="menuListMobile">
+			<div class="menuListMobile__line">
+				<div class="menuListMobile__image menuListMobile__image--black1"></div>
+				<a class="menuListMobile__link menuListMobile__line--font link1">Главная</a> 
+			</div>
+			<div class="menuListMobile__line">
+				<div class="menuListMobile__image menuListMobile__image--black2"></div>
+				<a class="menuListMobile__link menuListMobile__line--font link2">Проекты</a> 
+			</div>
+			<div class="menuListMobile__line">
+				<div class="menuListMobile__image menuListMobile__image--black3"></div>
+				<a class="menuListMobile__link menuListMobile__line--font link3">Услуги</a> 
+			</div>
+			<div class="menuListMobile__line">
+				<div class="menuListMobile__image menuListMobile__image--black4"></div>
+				<a class="menuListMobile__link menuListMobile__line--font link4">О компании</a> 
+			</div>
+			<div class="menuListMobile__line">
+				<div class="menuListMobile__image menuListMobile__image--black5"></div>
+				<a class="menuListMobile__link menuListMobile__line--font link5">Готовые решения</a> 
+			</div>
+			<div class="menuListMobile__line">
+				<div class="menuListMobile__image menuListMobile__image--black6"></div>
+				<a class="menuListMobile__link menuListMobile__line--font link6">Контакты</a> 
+			</div>
+		</nav>
+		<div class="buttonBoxMobile">
+			<input type="button" name="" id="menuMobileButton" value="Заполнить бриф">
+		</div>
+		<p id="writeUsMobile">Напишите нам</p>
+		<div class="menuMobilePost">
+			<img src="images/header/mail_icon.png" id="mailIconMobile">
+			<a href="#" id="postMenuMobile">info@sld-store.ru</a>
+		</div>
+	</div>
+
+<!-- PC -->
+	<div class="header">
+		<div id="logo">
+		</div>
+		<div class="menuBox">
+				<nav class="menu">
+					<a class="menu__navLink" href="#">Главная</a>
+					<a class="menu__navLink" href="#">Проекты</a>
+					<a class="menu__navLink" href="#">Услуги</a>
+					<a class="menu__navLink" href="#">О компании</a>
+					<a class="menu__navLink" href="#">Готовые решения</a>
+					<a class="menu__navLink" href="#">Контакты</a>
+				</nav>
+		</div>
+		<div class="eMail">
+			<img src="images/header/mail_icon.png" id="eMailLogo">
+			<p>info@sid-store.ru</p>
+		</div>
+		<div class="call">
+			<img src="images/header/phone_icon.png" id="callLogo">
+			<div class="callBox">
+				<a href="#" id="callName">Обратный звонок</a>
+				<p id="callNumber">8 812 615-62-79</p>
+			</div>
+		</div>
+	</div>
+
+<!--Popup -->
+<!-- Mobile -->
+	<div class="callPopUpMobile_overlay">
+	</div>
+	<div class="callPopUpMobile">
+		<div class="popUpBoxMobile">
+			<form method="POST">
+			<div class="popUpFormMobile">
+				<p id="popUpNameMobile">Готовы обсудить проект?</p>
+				<p id="popUpMoreMobile">Заполните форму ниже и мы свяжемся с вами.</p>
+				<label id="emptyInputMobile">Заполните все поля*</label>
+				<input type="text" class="userDataMobile" id="userNameMobile" placeholder="Имя*">
+				<input type="number" class="userDataMobile" id="userNumberMobile" placeholder="Телефон*">
+				<div class="check-agreeMobile">
+					<input type="checkbox" name="agree" id="agreeCheckboxMobile">
+					<label for="agreeCheckboxMobile" id="labelCallMobile"><label for="agreeCheckboxMobile" id="checkBoxLabelMobile">Я согласен с условиями обработки</label> <a href="#">персональных данных</a></label>
+				</div>
+				<input type="button" name="SendForm" value="Отправить" id="sendButtonMobile">
+			</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="successHideShowMobile">
+		<div class="successPopUpMobile">
+			<div class="circlesPopUpMobile">
+				<img src="images/header/Group_3.png" id="successImgMobile">
+				<p class="successTextMobile">Ваша заявка успешно отправлена.</p>
+				<p class="successTextMobile">Ожидайте звонка в ближайшее время!</p>
+				<input type="button" name="" value="Ок" id="okButtonMobile">
+			</div>
+		</div>
+	</div>
+
+<!-- PC -->
+	<div class="overlay_popUp">
+	</div>
+
+	<div class="popUpHideShow">
+		<div class="popUpBox">
+			<form method="POST">
+			<div class="popUpForm">
+				<p id="popUpName">Готовы обсудить проект?</p>
+				<p id="popUpMore">Заполните форму ниже и мы свяжемся с вами.</p>
+				<label id="emptyInput">Заполните все поля*</label>
+				<input type="text" class="userData" id="userName" placeholder="Имя*">
+				<input type="number" class="userData" id="userNumber" placeholder="Телефон*">
+				<div class="check-agree">
+					<input type="checkbox" name="agree" id="agreeCheckbox">
+					<label for="agreeCheckbox"><label for="agreeCheckbox" id="checkBoxLabel">Я согласен с условиями обработки</label> <a href="#">персональных данных</a></label>
+				</div>
+				<input type="button" name="SendForm" value="Отправить" id="sendButton">
+			</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="successHideShow">
+		<div class="successPopUp">
+			<div class="circlesPopUp">
+				<img src="images/header/Group_3.png" id="successImg">
+				<p class="successText">Ваша заявка успешно отправлена.</p>
+				<p class="successText">Ожидайте звонка в ближайшее время!</p>
+				<input type="button" name="" value="Ок" id="okButton">
+			</div>
+		</div>
+	</div>
+	
+
+<!--Body-->
+
+<!-- Slider -->
+<!-- Mobile -->
+	<div class="mainContentMobile">
+		<p id="mainText1">Оснащение конференц-залов</p>
+		<p id="mainText2">Видео конференции</p>
+		<p id="mainText3">Профессиональное оборудование для</br>
+		конференц-залов предназначено для</br>
+		проведения и организации презентаций,</br>
+		совещаний, бизнес-тренингов и</br>
+		онлайн-трансляции контента.</p>
+		<div class="mainButtons">
+			<input type="button" name="" id="callMobile" value="Обратный звонок">
+			<input type="button" name="" id="briefMobile" value="Заполнить бриф">
+		</div>
+	</div>	
+
+<!-- PC -->
+	<div class="slider">
+		<div class="aboutBox">
+			<p id="aboutBoxText1">Оснащение конференц-залов</p>
+			<p id="aboutBoxText2">Видео конференции</p>
+			<p id="aboutBoxText3">Профессиональное оборудование для конференц-залов</br>
+			предназначено для проведения и организации презентаций,</br>
+			совещаний, бизнес-тренингов и онлайн-трансляций контента.</p>
+			<div class="aboutButtons">
+				<input type="button" name="" value="Обратный звонок" id="callButton">
+				<input type="button" name="" value="Заполнить бриф" id="briefButton">
+			</div>
+		</div>
+
+		<div class="sliderBox">
+			<div class="slidewrapper">
+				<div class="sliderItem sliderItem__opacity">
+					<p class="numberSlider sliderItem__opacity">01</p>
+					<p class="textSlider sliderItem__opacity">Простота использования оснащения</br> 
+					позволяет решать функциональные и</br>
+					организационные задачи, оптимизировать</br>
+					работу, проводить мероприятия различного</br> 
+					масштаба.</p>
+				</div>
+				<div class="sliderItem">
+					<p class="numberSlider">02</p>
+					<p class="textSlider">Применение инновационных решений для</br>
+					демонстрации культурных и исторических</br>
+					реликвий – актуальная тенденция, которая</br>
+					успешно применяется в музеях и на</br>
+					площадках альтернативного искусства.</p>
+				</div>
+				<div class="sliderItem">
+					<p class="numberSlider">01</p>
+					<p class="textSlider">Простота использования оснащения</br> 
+					позволяет решать функциональные и</br>
+					организационные задачи, оптимизировать</br>
+					работу, проводить мероприятия различного</br> 
+					масштаба.</p>
+				</div>
+				<div class="sliderItem">
+					<p class="numberSlider">02</p>
+					<p class="textSlider">Применение инновационных решений для</br>
+					демонстрации культурных и исторических</br>
+					реликвий – актуальная тенденция, которая</br>
+					успешно применяется в музеях и на</br>
+					площадках альтернативного искусства.</p>
+				</div>
+			</div>	
+			<div class="sliderButton">
+				<input type="button" name="" id="leftButton">
+				<input type="button" name="" id="rightButton">
+			</div>
+		</div>
+	</div>
+
+<!-- Product-->
+<!-- Mobile -->
+	<div class="productMobile">
+		<div class="productPhotosMobile">
+			<div class="productImgMobile1">
+				<img src="images/product/img1Mobile.jpg" id="prod1ImgMobile" class="prodImgMobile">
+			</div>
+			<div class="productImgMobile2">
+				<img src="images/product/img2Mobile.jpg" id="prod2ImgMobile" class="prodImgMobile">
+				<div class="aboutProductOverlayMobile">
+				</div>
+			<div class="speakerBoxMobile">
+				<img src="images/product/speaker1.svg" id="speaker1Mobile">
+				<img src="images/product/polygon.png" id="polygonProdMobile">
+				<img src="images/product/circle1.svg" id="circleProd1Mobile">
+				<div class="aboutProductMobile">
+				<div class="aboutProductTextMobile">
+					<p class="aboutTextMobile" id="aboutText1Mobile">Electro-Voice</p>
+					<p class="aboutTextMobile" id="aboutText2Mobile"> EVID 4.2</p>
+					<ul>
+						<li>Очень мягкое звучание</li>
+						<li>Чувствительность — 89 дБ.</li>
+						<li>Пиковая мощность — 400 Вт.</li>
+						<li>Степень влагозащищенности IP34.</li>
+					</ul>
+				</div>
+				<img src="images/product/icon.png" id='iconProdMobile'>
+				
+				<img src="images/product/close_icon.png" id="closeIconMobile">
+				</div>
+			</div>	
+			<img src="images/product/speaker2.svg" id="speaker2Mobile">
+			
+			<img src="images/product/circle2.svg" id="circleProd2Mobile">	
+			</div>
+		</div>
+	</div>	
+
+<!-- PC -->
+	<div class="product">
+		<div class="productBox">
+		<div class="productPhotos">
+			<div class="productImg" id="productImg1">
+				<img src="images/product/img1.jpg" class="prodImg">
+			</div>
+			<div class="productImg" id="productImg2">
+				<img src="images/product/img.jpg" id="prodImg2" class="prodImg">
+				<div class="aboutProductOverlay">
+				</div>
+			<div class="speakerBox">
+					<img src="images/product/1.png" id="speaker1">
+					<div class="aboutProduct">
+					<div class="aboutProductText">
+						<p class="aboutText" id="aboutText1">Electro-Voice</p>
+						<p class="aboutText" id="aboutText2"> EVID 4.2</p>
+						<ul>
+							<li>Очень мягкое звучание</li>
+							<li>Чувствительность — 89 дБ.</li>
+							<li>Пиковая мощность — 400 Вт.</li>
+							<li>Степень влагозащищенности IP34.</li>
+						</ul>
+					</div>
+					<img src="images/product/icon.png" id='iconProd'>
+					<img src="images/product/polygon.png" id="polygonProd">
+					<img src="images/product/close_icon.png" id="closeIcon">
+					</div>
+				</div>	
+				<img src="images/product/2.png" id="speaker2">
+				<img src="images/product/5.svg" id="circleProd1">
+				<img src="images/product/3.png" id="circleProd2">	
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
