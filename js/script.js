@@ -140,7 +140,7 @@ $(document).ready(function(){
 
 	// Скрытие POPUP окна при нажатии на крестик и пространство вокруг и удаление всех данных из полей ввода
 	$('.overlay_popUp, #okButton').click(function(){
-		$('.overlay_popUp, .popUpHideShow, .successHideShow,').hide();
+		$('.overlay_popUp, .popUpHideShow, .successHideShow').hide();
 		$('.userData').css('border-color', '#aaa');
 		$('#emptyInput').hide();
 		$('.userData').val('');
@@ -250,10 +250,13 @@ $(document).ready(function(){
 	$('.productImg').css('height', $('.prodImg').css('height'));
 	$('#prod1ImgMobile').css('height', $('#prod2ImgMobile').css('height'));
 
-	$('.content').css('height', parseInt($('.headerMobile').css('height'))  
+	if ($(window).width() < 799){ 
+		$('.content').css('height', parseInt($('.headerMobile').css('height'))  
 		+ parseInt($('.mainContentMobile').css('height')) 
 		+ parseInt($('#prod2ImgMobile').css('height')));
-
+	} else {
+		$('.content').css('height', 'auto');
+	}
 });
 
 // Задается отступ сверху для блока с картинками
@@ -261,11 +264,18 @@ $('.productBox').css('margin-top', parseInt($('.prodImg').css('height'))*0.2);
 
 $(window).resize(function(){
 	$('.productBox').css('margin-top', parseInt($('.prodImg').css('height'))*0.2);
-})
+	if ($(window).width() < 799){ 
+		$('.content').css('height', parseInt($('.headerMobile').css('height'))  
+		+ parseInt($('.mainContentMobile').css('height')) 
+		+ parseInt($('#prod2ImgMobile').css('height')));
+	} else {
+		$('.content').css('height', 'auto');
+	}
+});
 
 // Настройка блока продукта по высоте равной размеру картинки
-$(window).resize(function(){
+/*$(window).resize(function(){
 	$('#prod1ImgMobile').css('height', $('#prod2ImgMobile').css('height'));
 	$('.productImg').css('height', $('.prodImg').css('height'));
-});
+});*/
 

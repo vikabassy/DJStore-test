@@ -546,10 +546,11 @@ input::-webkit-inner-spin-button {
 
 .aboutProduct li {
 	list-style: none;
-	background: url(../images/product/ellipse.png) no-repeat;
+	background: url(../images/product/ellipse.svg) no-repeat;
 	padding-left: 24px;
 	font-size: 12px;
 	margin-bottom: 10px; 
+	height: 16px;
 }
 
 .aboutText {
@@ -1347,10 +1348,11 @@ input::-webkit-inner-spin-button {
 
 .aboutProductMobile li {
 	list-style: none;
-	background: url(../images/product/ellipse.png) no-repeat;
+	background: url(../images/product/ellipse.svg) no-repeat;
 	padding-left: 24px;
 	font-size: 12px;
 	margin-bottom: 10px; 
+	height: 16px;
 }
 
 .aboutTextMobile {
