@@ -274,8 +274,8 @@ $(window).resize(function(){
 });
 
 // Настройка блока продукта по высоте равной размеру картинки
-/*$(window).resize(function(){
+$(window).resize(function(){
 	$('#prod1ImgMobile').css('height', $('#prod2ImgMobile').css('height'));
 	$('.productImg').css('height', $('.prodImg').css('height'));
-});*/
+});
 
