@@ -12,8 +12,11 @@ $(document).ready(function(){
 
 	$(window).scroll(function() {
 		let scrolled = $(window).scrollTop();
+		console.log('scrollTop: '+ scrolled);
 		if ( scrolled > 0 && scrolled > scrollPrev ) {
-			header.addClass('out');
+			if ($.browser.msie === false){
+				header.addClass('out');
+			}
 		} else {
 			header.removeClass('out');
 		}
@@ -34,7 +37,7 @@ $(document).ready(function(){
 
 	// Скрытие POPUP окна при нажатии на область вокруг в мобильной версии и 
 	// удаление всех данных из полей ввода
-	$('.callPopUpMobile_overlay, #okButtonMobile').click(function(){
+	$('.callPopUpMobile_overlay, #okButtonMobile, #closeIconPopUpMobile').click(function(){
 		$('.popUpBoxMobile, .callPopUpMobile_overlay, .successHideShowMobile').hide();
 		$('.userDataMobile').css('border-color', '#aaa');
 		$('#emptyInputMobile').hide();
@@ -44,11 +47,9 @@ $(document).ready(function(){
 
 	// Проверка заполненности всех полей ввода в мобильной версии и принятия соглашения
 	$('#sendButtonMobile').click(function(){
-		if (($('#agreeCheckboxMobile').is(':checked')) && ($('#userNameMobile').val().length >= 1) && 
-		($('#userNumberMobile').val().length >= 1)) {
-			$('.popUpBoxMobile').hide();
-			$('.successHideShowMobile').show();
-		} else if (($('#userNumberMobile').val().length < 1) && ($('#userNameMobile').val().length < 1)) {
+		if (($('#agreeCheckboxMobile').is(':checked')) && ($('#userNameMobile').val().length >= 1)) {
+			callMobile();
+		} else if (($('#userNameMobile').val().length < 1)) {
 			$('#emptyInputMobile').show();
 			$('#emptyInputMobile').css('margin-top', -25);
 			$('#userNumberMobile').css('border-color', 'red');
@@ -70,15 +71,11 @@ $(document).ready(function(){
 	// Вызов меню по нажатию кнопки в мобильной версии
 	$('.menuMobile').click(function(){
 		$('.openMenuMobile').show();
-		//$('.content').css('height', parseInt($('.openMenuMobile').css('height')));
 	});
 
 	// Скрытие меню по нажатию крестика в мобильной версии
 	$('#closeMobileMenu').click(function(){
 		$('.openMenuMobile').hide();
-		/*$('.content').css('height', parseInt($('.headerMobile').css('height'))  
-		+ parseInt($('.mainContentMobile').css('height')) 
-		+ parseInt($('#prod2ImgMobile').css('height')));*/
 	});
 
 	// Выделение активной строки в меню мобильной версии
@@ -139,7 +136,7 @@ $(document).ready(function(){
 
 
 	// Скрытие POPUP окна при нажатии на крестик и пространство вокруг и удаление всех данных из полей ввода
-	$('.overlay_popUp, #okButton').click(function(){
+	$('.overlay_popUp, #okButton, #closeIconPopUp').click(function(){
 		$('.overlay_popUp, .popUpHideShow, .successHideShow').hide();
 		$('.userData').css('border-color', '#aaa');
 		$('#emptyInput').hide();
@@ -149,23 +146,23 @@ $(document).ready(function(){
 
 	// Проверка заполненности всех полей ввода и принятия соглашения
 	$('#sendButton').click(function(){
-		if (($('#agreeCheckbox').is(':checked')) && ($('#userName').val().length >= 1) && 
-		($('#userNumber').val().length >= 1)) {
-			$('.popUpHideShow').hide();
-			$('.successHideShow').show();
-		} else if (($('#userNumber').val().length < 1) && ($('#userName').val().length < 1)) {
+		"use strict";
+		console.log('a=' + $('.userPhone').val().length, 'b=' + $("#userName").val().length);
+		if (($('#agreeCheckbox').is(':checked')) && ($('.userPhone').val().length >= 1) && ($("#userName").val().length >= 1)){
+			call();
+		} else if (($('.userPhone').val().length < 1) && ($("#userName").val().length < 1)){
 			$('#emptyInput').show();
 			$('#emptyInput').css('margin-top', -25);
-			$('#userNumber').css('border-color', 'red');
+			$('#phone').css('border-color', 'red');
 			$('#userName').css('border-color', 'red');
 		} else if ($('#userName').val().length < 1) {
 			$('#emptyInput').show();
 			$('#emptyInput').css('margin-top', -25);
 			$('#userName').css('border-color', 'red');
-		} else if ($('#userNumber').val().length < 1) {
+		} else if ($('.userPhone').val().length < 1) {
 			$('#emptyInput').show();
 			$('#emptyInput').css('margin-top', -25);
-			$('#userNumber').css('border-color', 'red');
+			$('#phone').css('border-color', 'red');
 		}
 	});
 
@@ -182,6 +179,7 @@ $(document).ready(function(){
 
 	// Нажатие на стрелку всправо листает под одному окну бесконечно
 	// Делает левую кнопку синей, если активен не первый блок
+	let contentCount = 1;
 	$('#rightButton').click(function(){
 		sliderAmount = $('.slidewrapper').children().length;
 		margin = parseInt($('.slidewrapper').css('marginLeft'));
@@ -189,11 +187,17 @@ $(document).ready(function(){
 			margin = margin - width;
 			$('.slidewrapper').animate({marginLeft:margin},300); 
 			$('#leftButton').css('background-image', 'url(images/slider/left_blue.png)');
+			contentCount++;
+			$('.aboutBox').removeClass('aboutBox_active');
+			$('.aboutBox').eq(contentCount-1).addClass('aboutBox_active');
 		} else {
 			$('.slidewrapper').css('margin-left', 0);
 			margin = -width;
 			$('.slidewrapper').animate({marginLeft:margin},300);
 			$('#leftButton').css('background', 'url(images/slider/left.png)');
+			contentCount = 1;
+			$('.aboutBox').removeClass('aboutBox_active');
+			$('.aboutBox').eq(0).addClass('aboutBox_active');
 		}
 
 		// Создает полупрозрачный фон для всех блоков кроме основного
@@ -222,6 +226,8 @@ $(document).ready(function(){
 		$('.numberSlider').eq(1).addClass('sliderItem__opacity');
 		$('.textSlider').eq(1).addClass('sliderItem__opacity');
 		$('#leftButton').css('background', 'url(images/slider/left.png)');
+		$('.aboutBox').removeClass('aboutBox_active');
+		$('.aboutBox').eq(0).addClass('aboutBox_active');
 	});
 
 	// POPUP окно при нажатии на синий +
@@ -279,4 +285,41 @@ $(window).resize(function(){
 	$('.productImg').css('height', $('.prodImg').css('height'));
 });
 
+$(document).ready(function(){
+	$('#phone').mask("+7 (999) 999-99-99");
+	$('#phoneMobile').mask("+7 (999) 999-99-99");
+});
 
+function call() {
+ 	  var msg = $('#POST_form').serialize();
+        $.ajax({
+          type: 'POST',
+          url: 'res.php',
+          data: msg,
+          success: function(data) {
+            $('.popUpHideShow').hide();
+			$('.successHideShow').show();
+          },
+          error:  function(xhr, str){
+	    alert('Возникла ошибка: ' + xhr.responseCode);
+          }
+        });
+        return false;
+    }
+
+    function callMobile() {
+    	var msg = $('#POST_formMobile').serialize();
+        $.ajax({
+          type: 'POST',
+          url: 'res.php',
+          data: msg,
+          success: function(data) {
+            $('.popUpBoxMobile').hide();
+			$('.successHideShowMobile').show();
+          },
+          error:  function(xhr, str){
+	    alert('Возникла ошибка: ' + xhr.responseCode);
+          }
+        });
+        return false;
+    }

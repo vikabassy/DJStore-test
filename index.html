@@ -54,7 +54,7 @@
 		</div>
 		<p id="writeUsMobile">Напишите нам</p>
 		<div class="menuMobilePost">
-			<img src="images/header/mail_icon.png" id="mailIconMobile">
+			<img src="images/header/mail_icon.svg" id="mailIconMobile">
 			<a href="#" id="postMenuMobile">info@sld-store.ru</a>
 		</div>
 	</div>
@@ -74,11 +74,11 @@
 				</nav>
 		</div>
 		<div class="eMail">
-			<img src="images/header/mail_icon.png" id="eMailLogo">
+			<img src="images/header/mail_icon.svg" id="eMailLogo">
 			<p>info@sid-store.ru</p>
 		</div>
 		<div class="call">
-			<img src="images/header/phone_icon.png" id="callLogo">
+			<img src="images/header/phone_icon.svg" id="callLogo">
 			<div class="callBox">
 				<a href="#" id="callName">Обратный звонок</a>
 				<p id="callNumber">8 812 615-62-79</p>
@@ -92,16 +92,17 @@
 	</div>
 	<div class="callPopUpMobile">
 		<div class="popUpBoxMobile">
-			<form method="POST">
+			<form method="POST" id="POST_formMobile" action="resMobile.php">
 			<div class="popUpFormMobile">
+				<img src="images/header/close_icon.svg" id="closeIconPopUpMobile">
 				<p id="popUpNameMobile">Готовы обсудить проект?</p>
 				<p id="popUpMoreMobile">Заполните форму ниже и мы свяжемся с вами.</p>
 				<label id="emptyInputMobile">Заполните все поля*</label>
-				<input type="text" class="userDataMobile" id="userNameMobile" placeholder="Имя*">
-				<input type="number" class="userDataMobile" id="userNumberMobile" placeholder="Телефон*">
+				<input type="text" class="userDataMobile" id="userNameMobile" name="userNameMobile" placeholder="Имя*">
+				<input type="text" class="userDataMobile" id="phoneMobile" name="userPhoneMobile" placeholder="+7 (***) ***-**-**">
 				<div class="check-agreeMobile">
 					<input type="checkbox" name="agree" id="agreeCheckboxMobile">
-					<label for="agreeCheckboxMobile" id="labelCallMobile"><label for="agreeCheckboxMobile" id="checkBoxLabelMobile">Я согласен с условиями обработки</label> <a href="#">персональных данных</a></label>
+					<label for="agreeCheckboxMobile" id="labelCallMobile"><label for="agreeCheckboxMobile" id="checkBoxLabelMobile">Я согласен с условиями обработки</label> <a href="#" target="blank">персональных данных</a></label>
 				</div>
 				<input type="button" name="SendForm" value="Отправить" id="sendButtonMobile">
 			</div>
@@ -112,7 +113,7 @@
 	<div class="successHideShowMobile">
 		<div class="successPopUpMobile">
 			<div class="circlesPopUpMobile">
-				<img src="images/header/Group_3.png" id="successImgMobile">
+				<img src="images/header/Success_circle.svg" id="successImgMobile">
 				<p class="successTextMobile">Ваша заявка успешно отправлена.</p>
 				<p class="successTextMobile">Ожидайте звонка в ближайшее время!</p>
 				<input type="button" name="" value="Ок" id="okButtonMobile">
@@ -126,16 +127,17 @@
 
 	<div class="popUpHideShow">
 		<div class="popUpBox">
-			<form method="POST">
+			<form method="POST" id="POST_form" action="res.php">
 			<div class="popUpForm">
+				<img src="images/header/close_icon.svg" id="closeIconPopUp">
 				<p id="popUpName">Готовы обсудить проект?</p>
 				<p id="popUpMore">Заполните форму ниже и мы свяжемся с вами.</p>
 				<label id="emptyInput">Заполните все поля*</label>
-				<input type="text" class="userData" id="userName" placeholder="Имя*">
-				<input type="number" class="userData" id="userNumber" placeholder="Телефон*">
+				<input type="text" class="userData" id="userName" name="userName" placeholder="Имя*">
+				<input type="tel" class="userData userPhone" id="phone" name="userPhone" placeholder="+7 (***) ***-**-**">
 				<div class="check-agree">
 					<input type="checkbox" name="agree" id="agreeCheckbox">
-					<label for="agreeCheckbox"><label for="agreeCheckbox" id="checkBoxLabel">Я согласен с условиями обработки</label> <a href="#">персональных данных</a></label>
+					<label for="agreeCheckbox" id="agreeLabel"><label for="agreeCheckbox" id="checkBoxLabel">Я согласен с условиями обработки</label> <a href="#" target="blank">персональных данных</a></label>
 				</div>
 				<input type="button" name="SendForm" value="Отправить" id="sendButton">
 			</div>
@@ -146,7 +148,7 @@
 	<div class="successHideShow">
 		<div class="successPopUp">
 			<div class="circlesPopUp">
-				<img src="images/header/Group_3.png" id="successImg">
+				<img src="images/header/Success_circle.svg" id="successImg">
 				<p class="successText">Ваша заявка успешно отправлена.</p>
 				<p class="successText">Ожидайте звонка в ближайшее время!</p>
 				<input type="button" name="" value="Ок" id="okButton">
@@ -175,10 +177,43 @@
 
 <!-- PC -->
 	<div class="slider">
-		<div class="aboutBox">
+		<div class="aboutBox aboutBox_active">
 			<p id="aboutBoxText1">Оснащение конференц-залов</p>
 			<p id="aboutBoxText2">Видео конференции</p>
 			<p id="aboutBoxText3">Профессиональное оборудование для конференц-залов</br>
+			предназначено для проведения и организации презентаций,</br>
+			совещаний, бизнес-тренингов и онлайн-трансляций контента.</p>
+			<div class="aboutButtons">
+				<input type="button" name="" value="Обратный звонок" id="callButton">
+				<input type="button" name="" value="Заполнить бриф" id="briefButton">
+			</div>
+		</div>
+		<div class="aboutBox">
+			<p id="aboutBoxText1">Оснащение конференц-залов</p>
+			<p id="aboutBoxText2">Видео конференции2</p>
+			<p id="aboutBoxText3">2Профессиональное оборудование для конференц-залов</br>
+			предназначено для проведения и организации презентаций,</br>
+			совещаний, бизнес-тренингов и онлайн-трансляций контента.</p>
+			<div class="aboutButtons">
+				<input type="button" name="" value="Обратный звонок" id="callButton">
+				<input type="button" name="" value="Заполнить бриф" id="briefButton">
+			</div>
+		</div>
+		<div class="aboutBox">
+			<p id="aboutBoxText1">Оснащение конференц-залов</p>
+			<p id="aboutBoxText2">Видео конференции3</p>
+			<p id="aboutBoxText3">3Профессиональное оборудование для конференц-залов</br>
+			предназначено для проведения и организации презентаций,</br>
+			совещаний, бизнес-тренингов и онлайн-трансляций контента.</p>
+			<div class="aboutButtons">
+				<input type="button" name="" value="Обратный звонок" id="callButton">
+				<input type="button" name="" value="Заполнить бриф" id="briefButton">
+			</div>
+		</div>
+		<div class="aboutBox">
+			<p id="aboutBoxText1">Оснащение конференц-залов</p>
+			<p id="aboutBoxText2">Видео конференции4</p>
+			<p id="aboutBoxText3">4Профессиональное оборудование для конференц-залов</br>
 			предназначено для проведения и организации презентаций,</br>
 			совещаний, бизнес-тренингов и онлайн-трансляций контента.</p>
 			<div class="aboutButtons">
@@ -234,10 +269,7 @@
 	<div class="productMobile">
 		<div class="productPhotosMobile">
 			<div class="productImgMobile1">
-				<img src="images/product/img1Mobile.jpg" id="prod1ImgMobile" class="prodImgMobile">
-			</div>
-			<div class="productImgMobile2">
-				<img src="images/product/img2Mobile.jpg" id="prod2ImgMobile" class="prodImgMobile">
+				<img src="images/product/img3Mobile.jpg" class="prodImgMobile">
 				<div class="aboutProductOverlayMobile">
 				</div>
 			<div class="speakerBoxMobile">
@@ -256,12 +288,10 @@
 					</ul>
 				</div>
 				<img src="images/product/icon.svg" id='iconProdMobile'>
-				
 				<img src="images/product/close_icon.svg" id="closeIconMobile">
 				</div>
 			</div>	
 			<img src="images/product/speaker2.svg" id="speaker2Mobile">
-			
 			<img src="images/product/circle2.svg" id="circleProd2Mobile">	
 			</div>
 		</div>
@@ -272,18 +302,17 @@
 		<div class="productBox">
 		<div class="productPhotos">
 			<div class="productImg" id="productImg1">
-				<img src="images/product/img1.jpg" class="prodImg">
+				<img src="images/product/img3.jpg" class="prodImg">
 			</div>
 			<div class="productImg" id="productImg2">
-				<img src="images/product/img.jpg" id="prodImg2" class="prodImg">
+				<!--<img src="images/product/img.jpg" id="prodImg2" class="prodImg">-->
 				<div class="aboutProductOverlay">
 				</div>
 			<div class="speakerBox">
-					<img src="images/product/1.png" id="speaker1">
+					<img src="images/product/1.svg" id="speaker1">
 					<div class="aboutProduct">
 					<div class="aboutProductText">
-						<p class="aboutText" id="aboutText1">Electro-Voice</p>
-						<p class="aboutText" id="aboutText2"> EVID 4.2</p>
+						<p id="aboutText">Electro-Voice</br>EVID 4.2</p>
 						<ul>
 							<li>Очень мягкое звучание</li>
 							<li>Чувствительность — 89 дБ.</li>
@@ -296,9 +325,9 @@
 					<img src="images/product/close_icon.svg" id="closeIcon">
 					</div>
 				</div>	
-				<img src="images/product/2.png" id="speaker2">
+				<img src="images/product/2.svg" id="speaker2">
 				<img src="images/product/5.svg" id="circleProd1">
-				<img src="images/product/3.png" id="circleProd2">	
+				<img src="images/product/3.svg" id="circleProd2">	
 			</div>
 		</div>
 		</div>
@@ -310,5 +339,6 @@
 
 	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+	<script src="js/jquery.maskedinput-master/src/jquery.maskedinput.js" type="text/javascript"></script>
 </body>
 </html>

@@ -37,12 +37,14 @@ a {
 }
 
 .header.out {
+	-ms-transform: translateY(-100%);
 	transform: translateY(-100%);
 	transition: .3s;
+	-webkit-transition: .3s;
 }
 
 #logo {
-	background: url('../images/header/logo.png') no-repeat;
+	background: url('../images/header/logo.svg') no-repeat;
 	background-size: contain;
 	display: flex;
 	justify-content: center;
@@ -151,11 +153,12 @@ a {
 .popUpBox {
 	position: fixed;
 	z-index: 100;
-	top: 30%;
-	left: 35%;
+	top: 50%;
+	left: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: -204px 0 0 -269px;
 	width: 538px;
 	height: 408px;
 	background: #ffffff;
@@ -166,6 +169,14 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: relative;
+}
+
+#closeIconPopUp {
+	position: absolute;
+	right: -18px;
+	top: -26px;
+	cursor: pointer;
 }
 
 .check-agree {
@@ -198,9 +209,6 @@ a {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	box-sizing: border-box;
 	border-radius: 9px;
-}
-
-.userData {
 	margin-bottom: 24px;
 	font-size: 16px;
 	padding-left: 15px;
@@ -231,6 +239,11 @@ input::-webkit-inner-spin-button {
 
 #agreeCheckbox {
 	margin-bottom: 16px;
+	cursor: pointer;
+}
+
+#agreeLabel, #checkBoxLabel {
+	cursor: pointer;
 }
 
 #sendButton {
@@ -243,6 +256,7 @@ input::-webkit-inner-spin-button {
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 22px;
+	cursor: pointer;
 }
 
 .successHideShow {
@@ -311,9 +325,9 @@ input::-webkit-inner-spin-button {
 .aboutBox {
 	color: #ffffff;
 	font-size: 16px;
-	width: 590px;
+	width: 620px;
 	height: 293px;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	margin: 123px 430px 208px 20%;
@@ -321,6 +335,10 @@ input::-webkit-inner-spin-button {
 
 .aboutBox p {
 	margin: 0;
+}
+
+.aboutBox_active {
+	display: flex;
 }
 
 #aboutBoxText1 {
@@ -341,16 +359,33 @@ input::-webkit-inner-spin-button {
 
 .aboutButtons {
 	display: flex;
+	position: relative;
 }
 
 #callButton {
-	border-radius: 8px;
 	width: 186px;
 	height: 48px;
 	color: #ffffff;
 	background: transparent;
 	border-color: #ffffff;
 	margin-right: 24px;
+	border: none;
+	font-size: 16px;
+	z-index: 10;
+}
+
+.aboutButtons:before {
+	content: "";
+	height: 46px;
+	width: 186px;
+	border-radius: 8px;
+	border: 1px solid #ffffff;
+	top: 0;
+	left: 0;
+	background: transparent;
+	z-index: 1000;
+	position: absolute;
+	z-index: 9;
 }
 
 #briefButton {
@@ -360,6 +395,7 @@ input::-webkit-inner-spin-button {
 	width: 186px;
 	height: 48px;
 	color: #ffffff;
+	font-size: 16px;
 }
 
 #briefButton:active, #briefButton:focus, #callButton:active, #callButton:focus{
@@ -463,7 +499,7 @@ input::-webkit-inner-spin-button {
 }
 
 #productImg1 {
-	width: 50%;
+	width: 100%;
 }
 
 #productImg2 {
@@ -536,6 +572,13 @@ input::-webkit-inner-spin-button {
 	margin: 0 0 0 24px;
 }
 
+#aboutText {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 132%;
+	margin: 6px 0 12px;
+}
+
 #aboutText1 {
  margin: 6px 0;
 }
@@ -546,17 +589,33 @@ input::-webkit-inner-spin-button {
 
 .aboutProduct li {
 	list-style: none;
-	background: url(../images/product/ellipse.svg) no-repeat;
 	padding-left: 24px;
 	font-size: 12px;
 	margin-bottom: 10px; 
 	height: 16px;
+	position: relative;
 }
 
-.aboutText {
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 132%;
+.aboutProduct li:before {
+	width: 16px;
+	height: 16px;
+	content: "";
+	left: 0;
+	border-radius: 50%;
+	position: absolute;
+	background: #397DFF;
+	opacity: 0.15; 
+}
+
+.aboutProduct li:after {
+	top: 5px;
+	width: 6px;
+	height: 6px;
+	content: "";
+	left: 5px;
+	border-radius: 50%;
+	position: absolute;
+	background: #397DFF;
 }
 
 #polygonProd {
@@ -630,6 +689,11 @@ input::-webkit-inner-spin-button {
 		height: 40px;
 	}
 
+	.aboutButtons:before {
+		height: 38px;
+		width: 150px;
+}
+
 	#briefButton {
 		width: 150px;
 		height: 40px;
@@ -680,31 +744,33 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 1279px) {
 	.popUpBox {
-		top: 35%;
-		left: 30%;
+		margin: -170px 0 0 -224px;
 		width: 448px;
 		height: 340px;
 	}
 
+	.popUpForm {
+		justify-content: center;
+	}
+
 	#popUpName {
 		font-size: 20px;
-		margin: 0 0 8px 12px;
+		margin-bottom: 8px;
 	}
 
 	#popUpMore {
 		font-size: 14px;
-		margin: 0 0 32px 12px;
+		margin-bottom: 32px;
 	}
 
 	#emptyInput {
-		margin: 0 0 10px 12px;
+		margin-bottom: 10px;
 		font-size: 10px;
 	}
 
 	.userData {
 		width: 388px;
 		height: 42px;
-		margin-left: 12px;
 		font-size: 14px;
 	}
 
@@ -717,7 +783,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	#agreeCheckbox {
-		margin: 3px 16px 0 12px;
+		margin: 3px 16px 0 0;
 	}
 
 	#checkBoxLabel {
@@ -732,13 +798,21 @@ input::-webkit-inner-spin-button {
 	#sendButton {
 		width: 388px;
 		height: 42px;
-		margin: 22px 0 0 12px;
-		font-size: 16px;
+		margin-top: 22px;
+		font-size: 18px;
+	}
+
+	#closeIconPopUp {
+		width: 16px;
+		height: 16px;
+		top: -6px;
+		right: -8px;
 	}
 
 	.successPopUp {
-		top: 35%;
-		left: 30%;
+		top: 50%;
+		left: 50%;
+		margin: -170px 0 0 -224px;
 		width: 448px;
 		height: 340px;
 	}
@@ -789,8 +863,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 1151px) {
 	.popUpBox {
-		top: 25%;
-		left: 28%;
+		margin: -142px 0 0 -187px;
 		width: 374px;
 		height: 284px;
 	}
@@ -821,7 +894,7 @@ input::-webkit-inner-spin-button {
 		margin-bottom: 14px;
 	}
 
-	#userNumber {
+	#userPhone {
 		margin-bottom: 14px;
 	}
 
@@ -850,8 +923,9 @@ input::-webkit-inner-spin-button {
 	}
 
 	.successPopUp {
-		top: 25%;
-		left: 28%;
+		top: 50%;
+		left: 50%;
+		margin: -142px 0 0 -187px;
 		width: 374px;
 		height: 284px;
 	}
@@ -906,49 +980,13 @@ input::-webkit-inner-spin-button {
 	}
 
 	.aboutProduct {
-		top: -112px;
-		left: -134px;
-		width: 294px;
-		height: 150px;
-	}
-
-	.aboutProductText {
-		margin: -10px 0 0 14px;
-	}
-
-	#aboutText1 {
-		margin: 0 0 4px 0;
-		font-size: 16px;
-	}
-
-	#aboutText2 {
-		margin-bottom: 8px;
-		font-size: 16px;
-	}
-
-	.aboutProduct li {
-		background: url(../images/product/ellipse1.png) no-repeat;
-		padding-left: 20px;
-		font-size: 10px;
-		margin-bottom: 6px; 
+		top: -142px;
+		left: -154px;
 	}
 
 	#polygonProd {
-		top: 144px;
-		left: 142px;
-	}
-
-	#iconProd {
-		top: 12px;
-		left: 206px;
-		width: 58px;
-	}
-
-	#closeIcon {
-		width: 12px;
-		height: 12px;
-		top: 12px;
-		left: 268px;
+		top: 174px;
+		left: 162px;
 	}
 }
 
@@ -1044,6 +1082,11 @@ input::-webkit-inner-spin-button {
 		font-size: 12px;
 	}
 
+	.aboutButtons:before {
+		height: 32px;
+		width: 130px;
+}
+
 	#briefButton {
 		border-radius: 8px;
 		width: 130px;
@@ -1108,10 +1151,8 @@ input::-webkit-inner-spin-button {
 	}
 
 	.aboutProduct {
-		top: -124px;
-		left: -138px;
-		width: 294px;
-		height: 150px;
+		top: -154px;
+		left: -158px;
 	}
 
 	.productImg {
@@ -1197,16 +1238,30 @@ input::-webkit-inner-spin-button {
 	.mainButtons {
 		display: flex;
 		margin: 32px 0 60px 16px;
+		position: relative;
 	}
 
 	#callMobile {
-		border-radius: 7px;
 		width: 156px;
 		height: 42px;
 		color: #ffffff;
 		background: transparent;
-		border-color: #ffffff;
 		margin-right: 16px;
+		border-color: #ffffff;
+		border-radius: 7px;
+		border: none;
+		z-index: 10;
+	}
+
+	.mainButtons:before {
+		content: "";
+		width: 156px;
+		height: 40px;
+		background: transparent;
+		border: 1px solid #ffffff;
+		border-radius: 7px;
+		position: absolute;
+		z-index: 9; 
 	}
 
 	#briefMobile {
@@ -1243,62 +1298,40 @@ input::-webkit-inner-spin-button {
 	}
 
 	.productImgMobile1 {
-		width: 50%;
-	}
-
-	.productImgMobile2 {
-		width: 50%;
-		position: absolute;
-		right: 0;
+		width: 100%;
 	}
 
 	.prodImgMobile {
 		width: 100%;
-		height: 100%;
-	}
-
-	.prodImgMobile {
-		width: 100%;
-
-	}
-
-	#productImg1Mobile {
-		width: 50%;
-	}
-
-	#productImg2Mobile {
-		width: 50%;
-		position: absolute;
-		left: 50%;
 	}
 
 	.speakerBoxMobile {
 		position: absolute;
 		top: 10px;
-		left: 20.5%;
+		left: 55%;
 	}
 
 	#speaker1Mobile {
 		position: absolute;
-		left: -18px;
+		left: 0;
 		top: 28px;
 	}
 
 	#speaker2Mobile {
 		position: absolute;
-		left: 78%;
+		left: 88%;
 		top: 38px;
 	}
 
 	#circleProd1Mobile {
 		position: absolute;
-		left: -28px;
+		left: -10px;
 		top: 22px;
 	}
 
 	#circleProd2Mobile {
 		position: absolute;
-		left: 74%;
+		left: 86%;
 		top: 32px;
 	}
 /* --------------------*/
@@ -1407,9 +1440,9 @@ input::-webkit-inner-spin-button {
 	.popUpBoxMobile {
 		position: fixed;
 		z-index: 100;
-		margin-left: -172px;
-		left:50%;
-		top: 20%;
+		margin: -173px 0 0 -172px;
+		left: 50%;
+		top: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -1425,6 +1458,16 @@ input::-webkit-inner-spin-button {
 		flex-direction: column;
 		justify-content: center;
 		margin: 34px 0 0 16px;
+		position: relative;
+	}
+
+	#closeIconPopUpMobile {
+		width: 14px;
+		height: 14px;
+		position: absolute;
+		top: -20px;
+		right: 14px;
+		cursor: pointer;
 	}
 
 	.check-agreeMobile {
@@ -1515,8 +1558,9 @@ input::-webkit-inner-spin-button {
 	.successPopUpMobile {
 		position: fixed;
 		z-index: 100;
-		top: 20%;
-		left: 4%;
+		top: 50%;
+		left: 50%;
+		margin: -173px 0 0 -171px;
 		display: flex;
 		justify-content: center;
 		background: #ffffff;
@@ -1732,6 +1776,11 @@ input::-webkit-inner-spin-button {
 		background: transparent;
 		border-color: #ffffff;
 		margin-right: 16px;
+	}
+
+	.mainButtons:before {
+		width: 140px;
+		height: 38px;
 	}
 
 	#briefMobile {
